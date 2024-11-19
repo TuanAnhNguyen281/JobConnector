@@ -1,0 +1,117 @@
+/* Đặt nền cho trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #70e1f5 0%, #ffd194 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Đặt kiểu cho container chính và phóng to thêm sang 2 bên */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Tăng kích thước max-width từ 720px lên 800px */
+    width: 100%;
+    transform: scale(1.15); /* Phóng to biểu mẫu lên 115% */
+}
+
+/* Kiểu tiêu đề */
+.container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px; /* Kích thước chữ tiêu đề */
+    margin-bottom: 20px;
+}
+
+/* Chia form thành hai cột */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Khoảng cách giữa hai cột */
+}
+
+/* Kiểu cho mỗi cột */
+.form-column {
+    flex: 1;
+}
+
+/* Đặt kiểu cho các nhóm biểu mẫu */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Kiểu cho nhãn */
+.form-group label {
+    display: block;
+    font-size: 13px; /* Giảm kích thước chữ nhãn */
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Đánh dấu bắt buộc */
+.required {
+    color: red;
+}
+
+/* Kiểu cho input và textarea */
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Kích thước padding cho hộp */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px; /* Giảm kích thước chữ cho các input và textarea */
+}
+
+/* Kiểu cho checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkbox-group label {
+    font-size: 11px; /* Giảm kích thước chữ cho nhãn checkbox */
+    color: #333;
+}
+
+/* Kiểu cho nút bấm */
+button {
+    background-color: #66a6ff;
+    color: #fff;
+    padding: 14px 20px; /* Kích thước padding cho nút bấm */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #557ac7;
+}
+
+/* Responsive - Đảm bảo hiển thị tốt trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

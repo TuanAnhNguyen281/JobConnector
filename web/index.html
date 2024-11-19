@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Trang chủ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/homepage.css">
+        <style>
+            .home {
+                background-image: url('images/picture1.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 70vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                color: white;
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
+                z-index: 1;
+            }
+
+            .home::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: -1;
+            }
+            .container-fluid{
+                padding-right: 0px;
+                padding-left: 0px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+            .job-card {
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                transition: transform 0.2s, box-shadow 0.2s;
+                margin-bottom: 20px;
+                background-color: white;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .job-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .company-logo {
+                background-color: #f8f9fa;
+                height: 100px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .card-body {
+                padding: 15px;
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .job-title {
+                color: #2d3436;
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                line-height: 1.4;
+            }
+
+            .job-details {
+                margin-bottom: 15px;
+                flex-grow: 1;
+            }
+
+            .job-details p {
+                margin: 5px 0;
+                color: #636e72;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+            }
+
+            .apply-btn {
+                width: 100%;
+                padding: 8px 16px;
+                background-color: #2563EB;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                font-weight: 500;
+                transition: background-color 0.2s;
+            }
+
+            .apply-btn:hover {
+                background-color: #1d4ed8;
+            }
+
+            .search-container {
+                background-color: white;
+                display: flex;
+                align-items: center;
+                border: 1px solid #ccc;
+                border-radius: 11px;
+                padding: 5px;
+                width: 550px;
+                font-family: 'Montserrat', sans-serif;
+                margin: 0 auto;
+                margin-bottom: 15px;
+                gap: 10px;
+                flex-wrap: wrap;
+
+                .company-logo {
+                    background-color: #f8f9fa;
+                    height: 100px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    border-bottom: 1px solid #e0e0e0;
+                    overflow: hidden;
+                }
+
+                .company-logo img.logo-img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: auto;
+                    height: auto;
+                }
+
+            }
+        </style>
+    </head>
+    <body>
+        <div class="home">
+            <div class="auth-buttons">
+                <a href="login.jsp">Đăng nhập </a>
+                <a href="Register.jsp">Đăng kí </a>
+            </div>
+            <div class="logo">
+                <span><img src="images/lOGO2.png" alt="JobConnector"></span>
+            </div>
+            <div class="tagline">Kết nối công việc của bạn</div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="bone">
+                <div>
+                    <h2>Việc làm cho bạn</h2>
+                    <div class="search-container">
+                        <span class="search-icon">
+                            <img src="images/searchlogo.png" alt="searchlogo" class="icon">
+                        </span>
+                        <input type="text" placeholder="Tìm kiếm công việc">
+                        <span class="location-icon">
+                            <img src="images/locationlogo.png" alt="locationlogo" class="icon">
+                        </span>
+                        <span>
+                            <select class="form-control" id="jobLocation" name="jobLocation" required>
+                                <option value="">Chọn địa điểm</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="TP.HCM">TP.HCM</option>
+                                <option value="Đà Nẵng">Đà Nẵng</option>
+                                <option value="Hải Phòng">Hải Phòng</option>
+                                <option value="Cần Thơ">Cần Thơ</option>
+                                <option value="An Giang">An Giang</option>
+                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                                <option value="Bắc Giang">Bắc Giang</option>
+                                <option value="Bắc Kạn">Bắc Kạn</option>
+                                <option value="Bạc Liêu">Bạc Liêu</option>
+                                <option value="Bến Tre">Bến Tre</option>
+                                <option value="Bình Định">Bình Định</option>
+                                <option value="Bình Dương">Bình Dương</option>
+                                <option value="Bình Phước">Bình Phước</option>
+                                <option value="Bình Thuận">Bình Thuận</option>
+                                <option value="Cà Mau">Cà Mau</option>
+                                <option value="Cần Thơ">Cần Thơ</option>
+                                <option value="Đắk Lắk">Đắk Lắk</option>
+                                <option value="Đắk Nông">Đắk Nông</option>
+                                <option value="Điện Biên">Điện Biên</option>
+                                <option value="Đồng Nai">Đồng Nai</option>
+                                <option value="Đồng Tháp">Đồng Tháp</option>
+                                <option value="Gia Lai">Gia Lai</option>
+                                <option value="Hà Giang">Hà Giang</option>
+                                <option value="Hà Nam">Hà Nam</option>
+                                <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                <option value="Hải Dương">Hải Dương</option>
+                                <option value="Hòa Bình">Hòa Bình</option>
+                                <option value="Hưng Yên">Hưng Yên</option>
+                                <option value="Khánh Hòa">Khánh Hòa</option>
+                                <option value="Kiên Giang">Kiên Giang</option>
+                                <option value="Kon Tum">Kon Tum</option>
+                                <option value="Lai Châu">Lai Châu</option>
+                                <option value="Lạng Sơn">Lạng Sơn</option>
+                                <option value="Lâm Đồng">Lâm Đồng</option>
+                                <option value="Long An">Long An</option>
+                                <option value="Nam Định">Nam Định</option>
+                                <option value="Ninh Bình">Ninh Bình</option>
+                                <option value="Ninh Thuận">Ninh Thuận</option>
+                                <option value="Phú Thọ">Phú Thọ</option>
+                                <option value="Phú Yên">Phú Yên</option>
+                                <option value="Quảng Bình">Quảng Bình</option>
+                                <option value="Quảng Nam">Quảng Nam</option>
+                                <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                <option value="Quảng Ninh">Quảng Ninh</option>
+                                <option value="Quảng Trị">Quảng Trị</option>
+                                <option value="Sóc Trăng">Sóc Trăng</option>
+                                <option value="Tây Ninh">Tây Ninh</option>
+                                <option value="Thái Bình">Thái Bình</option>
+                                <option value="Thái Nguyên">Thái Nguyên</option>
+                                <option value="Thanh Hóa">Thanh Hóa</option>
+                                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                                <option value="Tiền Giang">Tiền Giang</option>
+                                <option value="Trà Vinh">Trà Vinh</option>
+                                <option value="Vĩnh Long">Vĩnh Long</option>
+                                <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                                <option value="Yên Bái">Yên Bái</option>
+                            </select>
+                        </span>
+                        <a href="login.jsp">
+                        <button>Tìm kiếm</button>
+                        </a>
+                    </div>
+
+                    <div class="job-list-section">
+                        <div class="container">
+                            <div id="jobListContainer" class="row">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popular-job">
+            <div class="container">
+                <h2>Các ngành nghề nổi bật</h2>
+                <div class="career-grid">
+                    <a href="JobseekerServlet?action=filter&industry=IT" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/IT.png" alt="IT phần mềm">
+                            </div>
+                            <div class="career-title">IT phần mềm</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Sales" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/banhang.png" alt="Bán Hàng">
+                            </div>
+                            <div class="career-title">Bán Hàng</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Office" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/vanphong.png" alt="Văn Phòng">
+                            </div>
+                            <div class="career-title">Văn Phòng</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Education" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/giaoduc.png" alt="Giáo dục">
+                            </div>
+                            <div class="career-title">Giáo dục</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Customer Service" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/service.png" alt="Chăm sóc khách hàng">
+                            </div>
+                            <div class="career-title">Chăm sóc khách hàng</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Marketing" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/marketing.png" alt="Marketing">
+                            </div>
+                            <div class="career-title">Marketing</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Construction" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/engineer.png" alt="xây dựng">
+                            </div>
+                            <div class="career-title">Xây dựng</div>
+                        </div>
+                    </a>
+                    <a href="JobseekerServlet?action=filter&industry=Accounting" class="career-card-link">
+                        <div class="career-card">
+                            <div class="career-icon">
+                                <img src="images/Icon/kimtoan.png" alt="Ki su cau noi">
+                            </div>
+                            <div class="career-title">Kế toán</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <footer class="footer">
+                <div class="footer-section">
+                    <div class="footer-section"></div>
+                    <div class="footer-logo-image">
+                        <img src="images/lOGO2.png" alt="JobConnector">
+                    </div>
+                    <div class="job-connect">Kết nối công việc của bạn</div>
+                    <div class="social-icons">
+                        <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="footer-title">JobConnector</div>
+                    <ul class="footer-links">
+                        <li><a href="aboutus.jsp">Về chúng tôi</a></li>
+                        <li><a href="bussinessRule.jsp">Điều khoản và điều kiện</a></li>
+                        <li><a href="UserSuppotServlet?action=jlistTicket">Giải quyết khiếu nại</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <div class="footer-title">Liên hệ với đội ngũ phát triển tại:</div>
+                    <div class="contact-info">
+                        <span> <img src="images/logophone.png" alt="Phone"> (+84) 94 728 1124</span>
+                        <span> <img src="images/logoemail.png" alt="Email"> Email: group4.jobconnector@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    Copyright © 2024 GROUP4 - SWP391
+                </div>
+            </footer>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                console.log("DOM loaded, fetching job data...");
+                fetch('indexServlet')
+                        .then(response => {
+                            console.log("Response received:", response);
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log("Job data received:", data);
+                            const jobListContainer = document.getElementById('jobListContainer');
+
+                            if (data.length === 0) {
+                                console.log("No jobs found");
+                                jobListContainer.innerHTML = "<p>Không có công việc nào được tìm thấy.</p>";
+                            } else {
+                                jobListContainer.innerHTML = ''; // Clear existing content
+
+                                data.forEach(job => {
+                                    console.log("Processing job:", job);
+                                    const jobCard = document.createElement('div');
+                                    jobCard.className = 'col-lg-3 col-md-6 col-sm-12';
+                                    jobCard.innerHTML = `
+                       <div class="job-card">
+                                       <div class="company-logo">
+                                            <img src="" alt="Company logo" class="logo-img" >
+                                        </div>
+                           <div class="card-body">
+                               <h5 class="job-title">${job.jobTitle}</h5>
+                               <div class="job-details">
+                                   <p><i class="fas fa-building"></i>Công ty: ${job.companyName}</p>
+                                   <p><i class="fas fa-map-marker-alt"></i>Địa điểm: ${job.locationTitle}</p>
+                                   <p><i class="fas fa-money-bill-wave"></i>Lương: ${job.salaryRangeTitle}</p>
+                               </div>
+                               <a href="login.jsp" class="apply-btn">Xem chi tiết</a>
+                           </div>
+                       </div>
+                   `;
+                                    jobListContainer.appendChild(jobCard);
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error fetching job data:', error);
+                            const jobListContainer = document.getElementById('jobListContainer');
+                            jobListContainer.innerHTML = "<p>Có lỗi xảy ra khi tải dữ liệu công việc.</p>";
+                        });
+            });
+        </script>
+    </body>
+</html>

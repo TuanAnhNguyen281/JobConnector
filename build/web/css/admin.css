@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 280px; /* Extend sidebar width */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px; /* Add rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    margin: 20px; /* Add spacing around sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fffefe;
+    margin: 15px 0; /* Ensure spacing above and below */
+}
+
+.table-container h2,
+.card-info h2 {
+    font-size: 24px; /* Adjust font size if needed */
+    font-weight: bold;
+    color: #faf6f6;
+    margin-bottom: 10px; /* Ensure consistency in spacing */
+}
+
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    width: 100%;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item.active, .menu-item:hover {
+    background-color: #ff7a00;
+    color: #fff;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.breadcrumb {
+    color: #888;
+    font-size: 14px;
+}
+
+.breadcrumb h1 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Chuyển các phần tử bên trong thành cột */
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 60px;
+    width: 100%; /* Đảm bảo cards chiếm toàn bộ chiều rộng */
+}
+
+.table-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 30px; /* Khoảng cách giữa cards và table-container */
+}
+
+.card {
+    background-color: #333;
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: 0.3s ease;
+   
+}
+
+.card.orange {
+    background-color: #ff7a00;
+}
+
+.card-icon {
+    font-size: 36px;
+    margin-right: 20px;
+}
+
+.card-info h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.percentage {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.menu {
+    text-decoration: none;
+    text-size-adjust: 30px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.table-container {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 50px;
+    clear: both;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    color: #888;
+    font-size: 14px;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+}
+
+tbody tr {
+    border-top: 1px solid #eee;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+}
+
+.author-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-online {
+    background-color: #4caf50;
+    color: white;
+}
+
+.status-offline {
+    background-color: #cfd8dc;
+    color: #333;
+}
+
+.employed-date {
+    color: #ff7a00;
+    font-weight: bold;
+}
+
+.edit-link {
+    color: #888;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
