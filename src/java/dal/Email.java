@@ -61,7 +61,7 @@ public class Email {
 
         public static void main(String[] args) {
         // Thiết lập các thông tin để gửi email kiểm thử
-        String to = "ntanh2811@gmail.com"; // Địa chỉ email người nhận kiểm thử
+        String to = ""; // Địa chỉ email người nhận kiểm thử
         String subject = "Test Email - Activation Link"; // Tiêu đề email kiểm thử
         String noidung = "Dear User,\n\nThis is a test email to verify the functionality of the email sending system.\n\nRegards,\nTest Team";
 
